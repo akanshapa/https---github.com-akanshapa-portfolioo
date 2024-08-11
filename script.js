@@ -1,3 +1,31 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const quoteText = document.querySelector('.quote-text');
+    const quoteAuthor = document.querySelector('.quote-author');
+
+    setTimeout(() => {
+        quoteText.style.opacity = 1;
+    }, 500);
+
+    setTimeout(() => {
+        quoteAuthor.style.opacity = 1;
+    }, 1000);
+});
+
+
+const roles = ["A Web Developer", "A Problem Solver", "Software Developer","A UI/ UX Designer","Frontend Developer"];
+let index = 0;
+const rolesElement = document.querySelector("#roles i");
+function changeRole() {
+    rolesElement.classList.add("fade-out"); // Start fading out
+    setTimeout(() => {
+        rolesElement.textContent = roles[index];
+        rolesElement.classList.remove("fade-out");
+        rolesElement.classList.add("fade-in"); // Fade in new text
+        index = (index + 1) % roles.length;
+    }, 500); // Wait for fade-out to complete (same as CSS transition time)
+}
+setInterval(changeRole, 3000); // Change every 3 seconds
+
 document.addEventListener('DOMContentLoaded', function() {
     const navButtons = document.querySelectorAll('.div-8 div');
     navButtons.forEach(button => {
@@ -77,29 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    const contactForm = document.querySelector('#contact-form');
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = new FormData(this);
-        fetch('/submit-form', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('Thank you for your message. I will get back to you soon!');
-                this.reset();
-            } else {
-                alert('There was an error sending your message. Please try again.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('There was an error sending your message. Please try again.');
-        });
-    });
-
+   
     const footerSocialLinks = document.querySelectorAll('.div-204 > div, .div-217');
     footerSocialLinks.forEach(link => {
         link.addEventListener('click', function() {
@@ -286,4 +292,27 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.div-96 img.img').style.display = 'block'; // Show the thumbnail
         document.querySelector('.div-99').style.display = 'flex'; // Show the play button and text
     });
-   
+
+
+    function openForm() {
+        document.getElementById("contact-form").classList.add("show");
+    }
+    
+    function closeForm() {
+        document.getElementById("contact-form").classList.remove("show");
+    }
+    
+    document.getElementById("contact-form-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+    
+        // Display the confirmation message
+        document.getElementById("confirmation-message").style.display = "block";
+    
+        // Simulate form submission (you should remove this in production)
+        setTimeout(function() {
+            document.getElementById("contact-form-form").submit(); // Submit the form
+        }, 1000); // Delay form submission to show the confirmation message
+    });
+    
+    
+    
