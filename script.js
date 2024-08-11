@@ -136,29 +136,7 @@ app.listen(3000, () => {
 
 
 
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
-    
-    // Collect the form data
-    const formData = new FormData(this);
-
-    // Send the data using Fetch API
-    fetch('submit_form.php', {
-        method: 'POST',
-        body: formData,
-    })
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('form-response').innerText = data;
-        // Optionally, clear the form
-        document.getElementById('contactForm').reset();
-    })
-    .catch(error => {
-        document.getElementById('form-response').innerText = 'Oops! There was an error sending your message.';
-        console.error('Error:', error);
-    });
-});
-
+  
 document.addEventListener('DOMContentLoaded', function () {
     const filterButtons = document.querySelectorAll('.div-103 div');
     const projectItems = document.querySelectorAll('.project-item');
@@ -189,53 +167,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   
-   
-// <div class="container1">
-//     <div class="div-202" id="contact-trigger">
-//         <img loading="lazy"
-//             src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c1edda30f939c7b522a2e403800e9c4fb2a95bb38ac635cfc3a63a58180a965?apiKey=481104fb3273411f96eb0e50cbbfb041&"
-//             class="img-54" alt="Chat Icon" />
-//         <div class="div-203">Let's Talk?</div>
-//     </div>
-// </div>
-
-// <div id="contact-modal" class="modal">
-//     <div class="modal-content">
-//         <span class="close-button">&times;</span>
-//         <form id="contact-form" method="post">
-//             <label for="name">Name:</label>
-//             <input type="text" id="name" name="name" required>
-
-//             <label for="phone">Phone:</label>
-//             <input type="tel" id="phone" name="phone" required>
-
-//             <label for="message">Message:</label>
-//             <textarea id="message" name="message" required></textarea>
-
-//             <button type="submit">Submit</button>
-//         </form>
-//     </div>
-// </div>
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const roles = [
-        "A Web Developer",
-        "A Tech Enthusiast"
-    ];
-    let roleIndex = 0;
-    const rolesElement = document.getElementById("roles");
-
-    function changeRole() {
-        roleIndex = (roleIndex + 1) % roles.length; // Move to the next role
-        rolesElement.style.opacity = 0; // Fade out
-        setTimeout(() => {
-            rolesElement.innerHTML = `<i>${roles[roleIndex]}</i>`; // Update to the new role
-            rolesElement.style.opacity = 1; // Fade in
-        }, 500); // Delay for fade out
-    }
-    setInterval(changeRole, 3000); // Change role every 3 seconds
-});
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -279,20 +210,9 @@ document.addEventListener("DOMContentLoaded", function() {
     window.open('certificates.pdf', '_blank');}
 
     function playVideo() {
-        document.getElementById('videoContainer').style.display = 'block'; // Show the video container
-        document.getElementById('overlay').style.display = 'block'; // Show overlay
-        document.querySelector('.div-96 img.img').style.display = 'none'; // Hide the thumbnail
-        document.querySelector('.div-99').style.display = 'none'; // Hide the play button and text
+        document.getElementById('overlay').style.display = 'flex';
     }
-
-    // Close video and overlay when clicking on overlay
-    document.getElementById('overlay').addEventListener('click', function() {
-        document.getElementById('videoContainer').style.display = 'none'; // Hide the video container
-        document.getElementById('overlay').style.display = 'none'; // Hide overlay
-        document.querySelector('.div-96 img.img').style.display = 'block'; // Show the thumbnail
-        document.querySelector('.div-99').style.display = 'flex'; // Show the play button and text
-    });
-
+    
 
     function openForm() {
         document.getElementById("contact-form").classList.add("show");
