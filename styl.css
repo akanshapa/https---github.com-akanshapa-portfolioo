@@ -468,9 +468,8 @@ html {
   font-weight: 400;
   line-height: 27px;
   text-align: start;
-  /* Center the text */
-  margin-top: -30px;
-  /* Adjust margin to avoid overlap */
+  margin-top: -60px;
+
   padding: 0 20px;
   /* Add padding for better spacing */
   box-sizing: border-box;
@@ -511,6 +510,7 @@ html {
     /* Adjust line height */
   }
 }
+
 
 .div-26 {
   display: flex;
@@ -2210,6 +2210,38 @@ body {
 
   }
 }
+/* General Styles for Role Container */
+#role-container {
+  text-align: start;
+  padding: 10px;
+  margin:10px 0;
+}
+
+#roles {
+  font-size: 5vw; /* Responsive font size based on viewport width */
+  font-weight: bold;
+  color: #333;
+}
+
+/* Fallback for Extremely Large Screens */
+@media (min-width: 1200px) {
+  #roles {
+      font-size: 3rem; /* Cap the font size for very large screens */
+  }
+}
+
+/* Fallback for Extremely Small Screens */
+@media (max-width: 320px) {
+  #roles {
+      font-size: 4vw; /* Slightly smaller for very small screens */
+  }
+
+  #role-container {
+      padding: 5px;
+      margin: 10px 0;
+  }
+}
+
 .div-98 {
   display: flex;
   gap: 10px;
