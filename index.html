@@ -69,7 +69,8 @@
                             <div class="div-22">
                                 <div class="div-23">// Hello World👋</div>
                                 <div class="div-24">
-                                    This is Akansha Parmar, <img src="assests/akanshaIcon.png" alt="akanshaIcon" width="70px">
+                                    This is Akansha Parmar, <img src="assests/akanshaIcon.png" alt="akanshaIcon"
+                                        width="70px">
                                     <br />
                                     <div id="role-container">
                                         <span id="roles"><i>A Software Engineer</i> </span>
@@ -83,10 +84,12 @@
                                 <div class="div-26">
                                     <a href="mailto:akksparmar260@gmail.com?subject=Let's%20Talk" class="email-link">
                                         <div class="div-27">
-                                            <img loading="lazy" src="assests/mail-add-01.png" class="img-7" alt="Chat Icon" />
+                                            <img loading="lazy" src="assests/mail-add-01.png" class="img-7"
+                                                alt="Chat Icon" />
                                             <div class="div-28">Let's Talk?</div>
                                         </div>
                                     </a>
+
                                     <a href="assests/Akansha_Parmar_resumme.pdf" target="_blank"
                                         download="assests/Akansha_Parmar_resumme.pdf" class="cv-link">
                                         <div class="div-29">
@@ -94,7 +97,9 @@
                                             <div class="div-30">My CV</div>
                                         </div>
                                     </a>
+
                                 </div>
+
                             </div>
                         </div>
                         <div class="column-2">
@@ -200,8 +205,7 @@
                     <img src="assests/Java.png" alt="Java icon">
                     <div class="label">Java</div>
                 </div>
-                <a href="mailto:akksparmar260@.com?subject=Project%20Idea&body=Let's%20talk%20and%20make%20your%20idea%20a%20reality"
-                    class="box special">
+                <a href="mailto:akksparmar260@gmail.com?subject=Let's%20Talk" class="box special">
                     <div class="special-text">Do you have a project idea?</div>
                     <div class="special-text">Let's talk and make your idea a reality</div>
                     <div class="talk">
@@ -211,6 +215,18 @@
                     </div>
                 </a>
         </section>
+
+        <div class="quote-section">
+            <div class="quote-container">
+                <p class="quote-text">
+                    <span>"</span>First, solve the problem. Then, write the code.<span>"</span>
+                </p>
+                <span class="quote-author">– John Johnson</span>
+            </div>
+        </div>
+
+
+
         <div class="div-78">
             <div class="div-79">Hey, This is AKANSHA</div>
             <img loading="lazy"
@@ -234,7 +250,7 @@
             <div class="overlay" id="overlay"></div>
             <div class="video-container" id="videoContainer">
                 <video controls autoplay>
-                    <source src="intro video1.mp4" type="video/mp4">
+                    <source src="assests/intro video1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -370,7 +386,7 @@
             <div class="contents">
                 <h1>Achievements &amp; Certifications</h1>
                 <p>Each recognition underscores my dedication to delivering outstanding solutions.</p>
-                <a href="certificates.pdf" target="_blank">
+                <a href="assests/certificates.pdf" target="_blank">
                     <button>View Certificates</button>
                 </a>
             </div>
@@ -394,27 +410,30 @@
                                 Reach out and let's bring ideas to life! I'm here to collaborate and create digital
                                 magic.
                             </div>
-                            <!-- <div class="container1">
-                                <div class="div-202" id="contact-trigger">
-                                    <img loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c1edda30f939c7b522a2e403800e9c4fb2a95bb38ac635cfc3a63a58180a965?apiKey=481104fb3273411f96eb0e50cbbfb041&"
-                                        class="img-54" alt="Chat Icon" />
-                                    <div class="div-203">Let's Talk?</div>
-                                </div> -->
-                            <!-- <form class="contact-form" id="contactForm">
-                                    <label for="name">Name:</label>
-                                    <input type="text" id="name" name="name" required>
+                            <!--FORM-->
+                            <button class="contact-button" onclick="openForm()">Contact Me</button>
 
-                                    <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" required>
+                            <div id="contact-form" class="form-popup">
+                                <form id="contact-form-form" action="https://formspree.io/f/mrbzkypy" method="POST"
+                                    class="form-container">
+                                    <h2>Contact Me</h2>
 
-                                    <label for="message">Message:</label>
-                                    <textarea id="message" name="message" rows="4" required></textarea>
+                                    <label for="name"><b>Name</b></label>
+                                    <input type="text" placeholder="Enter Your Name" name="name" required>
 
-                                    <button type="submit">Submit</button>
+                                    <label for="email"><b>Email</b></label>
+                                    <input type="email" placeholder="Enter Your Email" name="email" required>
+
+                                    <label for="message"><b>Message</b></label>
+                                    <textarea placeholder="Your Message" name="message" required></textarea>
+
+                                    <button type="submit" class="btn submit">Send Message</button>
+                                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
                                 </form>
-                                <div id="form-response"></div> -->
-                            <!-- </div> -->
+                                <div id="confirmation-message" class="confirmation-message">
+                                    Your message has been sent successfully!
+                                </div>
+                            </div>
 
                     </div>
                 </div>
@@ -448,13 +467,13 @@
                 <div class="div-222">
                     Copyright © 2024 "Akansha Parmar". All Rights Reserved
                 </div>
-                <div class="div-223">
+                <!-- <div class="div-223">
                     <div class="div-224">Privacy Policy</div>
                     <img loading="lazy"
                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/15c9d1b82d14c868c9e29b92f739a60617c134783214e0021f94c087f7ffd91b?apiKey=481104fb3273411f96eb0e50cbbfb041&"
                         class="img-61" alt="Separator" />
                     <div class="div-225">Terms of Conditions</div>
-                </div>
+                </div> -->
             </div>
         </footer>
     </div>
